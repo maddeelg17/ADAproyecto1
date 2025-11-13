@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>EduConnect - Plataforma Educativa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        :root {
+            --color-primario: #2563eb;
+            --color-secundario: #0f172a;
+            --color-fondo: #f1f5f9;
+            --color-blanco: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                sans-serif;
+        }
+
+        body {
+            background: var(--color-fondo);
+            color: #0f172a;
+            line-height: 1.5;
+        }
+
+        header {
+            background: var(--color-secundario);
+            color: var(--color-blanco);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+        }
+
+        nav {
+            margin-top: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-blanco);
+            font-size: 0.9rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+        }
+
+        nav a:hover {
+            background: var(--color-primario);
+        }
+
+        .hero {
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, #2563eb, #0f172a);
+            color: var(--color-blanco);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 0.5rem;
+            font-size: 1rem;
+        }
+
+        .hero span {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem 3rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-card {
+            background: var(--color-blanco);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .area-card {
+            background: var(--color-blanco);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            box-shadow: 0 6px 12px rgba(15, 23, 42, 0.06);
+            border: 1px solid #e5e7eb;
+        }
+
+        .area-card h4 {
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+
+        .area-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .area-card a {
+            display: inline-block;
+            margin-top: 0.3rem;
+            font-size: 0.85rem;
+            color: var(--color-primario);
+            text-decoration: none;
+        }
+
+        .area-card a:hover {
+            text-decoration: underline;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .video-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 0.75rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            background: #e0f2fe;
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 1rem 2rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 900px) {
+            .areas-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- CABECERA -->
+    <header>
+        <h1>EduConnect</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#areas">Áreas y cursos</a></li>
+                <li><a href="#matematica">Matemática</a></li>
+                <li><a href="#quimica">Química</a></li>
+                <li><a href="#programacion">Programación</a></li>
+                <li><a href="#fisica">Física</a></li>
+                <li><a href="#logica">Desarrollo lógico</a></li>
+                <li><a href="#dibujo">Dibujo técnico</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PORTADA / INICIO -->
+    <section id="inicio" class="hero">
+        <h2>Plataforma EduConnect</h2>
+        <p>
+            Bienvenido/a a EduConnect, un entorno web donde puedes acceder a recursos
+            de Matemática, Química, Programación, Física, Desarrollo Lógico y
+            Dibujo Técnico Computarizado.
+        </p>
+        <p>
+            Explora las áreas, elige un curso y empieza a aprender con videos
+            explicativos seleccionados para reforzar tus estudios.
+        </p>
+        <span>Proyecto académico - Universidad Tecnológica de Panamá</span>
+    </section>
+
+    <main>
+        <!-- ÁREAS Y CURSOS (RESUMEN) -->
+        <section id="areas" class="section-card">
+            <h3>Áreas disponibles</h3>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+                Selecciona un área para ir directamente a sus videos:
+            </p>
+
+            <div class="areas-grid">
+                <article class="area-card">
+                    <h4>Matemática</h4>
+                    <p>Refuerza tus bases de álgebra y razonamiento matemático.</p>
+                    <span class="badge">4 videos</span><br />
+                    <a href="#matematica">Ver videos de Matemática →</a>
+                </article>
+
+                <article class="area-card">
+                    <h4>Química</h4>
+                    <p>Conceptos fundamentales de química general explicados paso a paso.</p>
+                    <span class="badge">4 videos</span><br />
+                    <a href="#quimica">Ver videos de Química →</a>
+                </article>
+
+                <article class="area-card">
+                    <h4>Programación</h4>
+                    <p>Aprende lógica de programación, sintaxis y buenas prácticas.</p>
+                    <span class="badge">4 videos</span><br />
+                    <a href="#programacion">Ver videos de Programación →</a>
+                </article>
+
+                <article class="area-card">
+                    <h4>Física</h4>
+                    <p>Videos para comprender fenómenos físicos y sus aplicaciones.</p>
+                    <span class="badge">4 videos</span><br />
+                    <a href="#fisica">Ver videos de Física →</a>
+                </article>
+
+                <article class="area-card">
+                    <h4>Desarrollo lógico y algoritmos</h4>
+                    <p>
+                        Mejora tu pensamiento lógico y comprensión de algoritmos básicos.
+                    </p>
+                    <span class="badge">4 videos</span><br />
+                    <a href="#logica">Ver videos de Desarrollo lógico →</a>
+                </article>
+
+                <article class="area-card">
+                    <h4>Dibujo técnico computarizado</h4>
+                    <p>
+                        Introducción al dibujo técnico asistido por computadora.
+                    </p>
+                    <span class="badge">4 videos</span><br />
+                    <a href="#dibujo">Ver videos de Dibujo técnico →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- MATEMÁTICA -->
+        <section id="matematica" class="section-card">
+            <h3>Curso de Matemática</h3>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+                Colección de videos para reforzar tus conocimientos de matemática básica y
+                universitaria.
+            </p>
+
+            <div class="videos-grid">
+                <article class="video-card">
+                    <h4>Matemática 1</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/NQx89V_J4eI"
+                        title="Matemática 1"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Matemática 2</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/ywec3POB28I"
+                        title="Matemática 2"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Matemática 3</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/aLj2r6jL3sc"
+                        title="Matemática 3"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Matemática 4</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/qfPx7ImuJQ"
+                        title="Matemática 4"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+            </div>
+        </section>
+
+        <!-- QUÍMICA -->
+        <section id="quimica" class="section-card">
+            <h3>Curso de Química</h3>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+                Videos introductorios y de repaso sobre temas fundamentales de química.
+            </p>
+
+            <div class="videos-grid">
+                <article class="video-card">
+                    <h4>Química 1</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/etMPtJSmaRg"
+                        title="Química 1"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Química 2</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/wl_HCBxpBs0"
+                        title="Química 2"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Química 3</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/gnv-Zx6UgXY"
+                        title="Química 3"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Química 4</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/smlrUR_UXnk"
+                        title="Química 4"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+            </div>
+        </section>
+
+        <!-- PROGRAMACIÓN -->
+        <section id="programacion" class="section-card">
+            <h3>Curso de Programación</h3>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+                Aprende conceptos de programación desde cero y refuerza tu lógica.
+            </p>
+
+            <div class="videos-grid">
+                <article class="video-card">
+                    <h4>Programación 1</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/mENHDQ8SLsI"
+                        title="Programación 1"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Programación 2</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/DAdRO6ByBoU"
+                        title="Programación 2"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Programación 3</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/UzHFkEdnRuc"
+                        title="Programación 3"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Programación 4</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/w8VZxo1TlnU"
+                        title="Programación 4"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+            </div>
+        </section>
+
+        <!-- FÍSICA -->
+        <section id="fisica" class="section-card">
+            <h3>Curso de Física</h3>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+                Recursos en video para comprender mejor conceptos de física.
+            </p>
+
+            <div class="videos-grid">
+                <article class="video-card">
+                    <h4>Física 1</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/Xfze3E-Gf9s"
+                        title="Física 1"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Física 2</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/LF24eLFtldY"
+                        title="Física 2"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Física 3</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/3w9jhbDvEuM"
+                        title="Física 3"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Física 4</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/jfy4EMF0a90"
+                        title="Física 4"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+            </div>
+        </section>
+
+        <!-- DESARROLLO LÓGICO Y ALGORITMOS -->
+        <section id="logica" class="section-card">
+            <h3>Curso de Desarrollo lógico y algoritmos</h3>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+                Entrena tu mente con ejercicios de razonamiento y diseño de algoritmos.
+            </p>
+
+            <div class="videos-grid">
+                <article class="video-card">
+                    <h4>Desarrollo lógico 1</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/2a7BP5QeGsg"
+                        title="Desarrollo lógico 1"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Desarrollo lógico 2</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/C8IK5s9T1hM"
+                        title="Desarrollo lógico 2"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Desarrollo lógico 3</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/Pwg5xOH3NRc"
+                        title="Desarrollo lógico 3"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Desarrollo lógico 4</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/rpVHjfVu57o"
+                        title="Desarrollo lógico 4"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+            </div>
+        </section>
+
+        <!-- DIBUJO TÉCNICO COMPUTARIZADO -->
+        <section id="dibujo" class="section-card">
+            <h3>Curso de Dibujo técnico computarizado</h3>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+                Introducción al uso de herramientas de dibujo asistido por computadora.
+            </p>
+
+            <div class="videos-grid">
+                <article class="video-card">
+                    <h4>Dibujo técnico 1</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/t8Yox3p4zHY"
+                        title="Dibujo técnico 1"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Dibujo técnico 2</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/tc3dMis2rfg"
+                        title="Dibujo técnico 2"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Dibujo técnico 3</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/sE5MTgLZt3k"
+                        title="Dibujo técnico 3"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+
+                <article class="video-card">
+                    <h4>Dibujo técnico 4</h4>
+                    <iframe
+                        src="https://www.youtube.com/embed/l3yNVZQUCAE"
+                        title="Dibujo técnico 4"
+                        allowfullscreen
+                    ></iframe>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        EduConnect · Plataforma educativa de apoyo al aprendizaje · 2025
+    </footer>
+</body>
+</html>
