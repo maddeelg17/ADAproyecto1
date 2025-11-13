@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduConnect — Tutorías</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="Img/Index/logo.jpeg" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta name="description"
+        content="Página de tutorías con enlaces a videos por categorías y buscador en tiempo real." />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="top-bar" aria-label="Barra superior">
+            <a href="Index.html" class="brand" aria-label="Inicio">
+                <img src="" alt="Logo EduConnect" class="logo" />
+                <span class="brand-name">EduConnect Tutorías</span>
+            </a>
+
+            <!-- Buscador interno para filtrar videos -->
+            <form class="search-container" role="search" onsubmit="return false;">
+                <label for="buscador" class="sr-only">Buscar tutorial</label>
+                <input type="text" id="buscador" placeholder="Buscar tutorial (tema, título, canal)…"
+                    autocomplete="off" />
+                <button type="button" id="btnLimpiar" title="Limpiar búsqueda" aria-label="Limpiar búsqueda">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </form>
+
+            <!-- Enlaces de usuario opcionales -->
+            <nav class="user-icons" aria-label="Acciones de usuario">
+                <a href="login.html" title="Iniciar sesión"><i class="fa-solid fa-right-to-bracket"></i><span
+                        class="sr-only">Iniciar sesión</span></a>
+                <a href="register.html" title="Registro"><i class="fa-solid fa-user-plus"></i><span
+                        class="sr-only">Registrarse</span></a>
+            </nav>
+        </div>
+
+        <!-- Navegación de categorías (anclas) -->
+        <nav class="navbar" id="navbar" aria-label="Navegación principal">
+            <ul class="menu-principal">
+                <li><a href="#matematicas">Matemáticas</a></li>
+                <li><a href="#fisica">Física</a></li>
+                <li><a href="#programacion">Programación</a></li>
+                <li><a href="#electronica">Electrónica</a></li>
+                <li><a href="#redes">Redes</a></li>
+                <li><a href="#ia">Inteligencia Artificial</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+        <!-- Intro -->
+        <section class="intro">
+            <h1>Tutorías por video</h1>
+            <p>Explora las categorías o usa el buscador para encontrar rápidamente el video que necesitas. Todos los
+                enlaces se abren en una pestaña nueva.</p>
+        </section>
+
+        <!-- Plantilla de categoría: usa listas simples para escalar a muchos enlaces -->
+        <section id="matematicas" class="categoria">
+            <h2><i class="fa-solid fa-square-root-variable"></i> Matemáticas</h2>
+            <ul class="video-list" data-categoria="matematicas">
+                <li class="video-item" data-title="Álgebra básica | Ecuaciones lineales" data-canal="Profe Online">
+                    <a href="https://www.youtube.com/watch?v=XXXXXXXXX1" target="_blank"
+                        rel="noopener noreferrer">Álgebra básica: ecuaciones lineales</a>
+                    <span class="meta"> · Profe Online</span>
+                </li>
+                <li class="video-item" data-title="Cálculo diferencial | Derivadas desde cero" data-canal="MatEdu">
+                    <a href="https://www.youtube.com/watch?v=XXXXXXXXX2" target="_blank"
+                        rel="noopener noreferrer">Cálculo diferencial: derivadas desde cero</a>
+                    <span class="meta"> · MatEdu</span>
+                </li>
+                <li class="video-item" data-title="Estadística descriptiva | Medidas de tendencia central"
+                    data-canal="Aprende Hoy">
+                    <a href="https://www.youtube.com/watch?v=XXXXXXXXX3" target="_blank"
+                        rel="noopener noreferrer">Estadística descriptiva: media, mediana y moda</a>
+                    <span class="meta"> · Aprende Hoy</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="fisica" class="categoria">
+            <h2><i class="fa-solid fa-atom"></i> Física</h2>
+            <ul class="video-list" data-categoria="fisica">
+                <li class="video-item" data-title="Cinemática | MRU y MRUA" data-canal="Física Fácil">
+                    <a href="https://www.youtube.com/watch?v=YYYYYYYYY1" target="_blank"
+                        rel="noopener noreferrer">Cinemática: MRU y MRUA</a>
+                    <span class="meta"> · Física Fácil</span>
+                </li>
+                <li class="video-item" data-title="Leyes de Newton | Dinámica" data-canal="Science Pro">
+                    <a href="https://www.youtube.com/watch?v=YYYYYYYYY2" target="_blank" rel="noopener noreferrer">Leyes
+                        de Newton: fuerzas y masa</a>
+                    <span class="meta"> · Science Pro</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="programacion" class="categoria">
+            <h2><i class="fa-solid fa-code"></i> Programación</h2>
+            <ul class="video-list" data-categoria="programacion">
+                <li class="video-item" data-title="HTML y CSS desde cero" data-canal="Frontend para Todos">
+                    <a href="https://www.youtube.com/watch?v=ZZZZZZZZZ1" target="_blank" rel="noopener noreferrer">HTML
+                        y CSS desde cero</a>
+                    <span class="meta"> · Frontend para Todos</span>
+                </li>
+                <li class="video-item" data-title="JavaScript básico | DOM y eventos" data-canal="JS en Español">
+                    <a href="https://www.youtube.com/watch?v=ZZZZZZZZZ2" target="_blank"
+                        rel="noopener noreferrer">JavaScript: DOM y eventos</a>
+                    <span class="meta"> · JS en Español</span>
+                </li>
+                <li class="video-item" data-title="Python | Fundamentos y ejemplos" data-canal="PyLatam">
+                    <a href="https://www.youtube.com/watch?v=ZZZZZZZZZ3" target="_blank"
+                        rel="noopener noreferrer">Python: fundamentos y ejemplos</a>
+                    <span class="meta"> · PyLatam</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="electronica" class="categoria">
+            <h2><i class="fa-solid fa-microchip"></i> Electrónica</h2>
+            <ul class="video-list" data-categoria="electronica">
+                <li class="video-item" data-title="Arduino para principiantes" data-canal="Makers Hub">
+                    <a href="https://www.youtube.com/watch?v=WWWWWWWWW1" target="_blank"
+                        rel="noopener noreferrer">Arduino para principiantes</a>
+                    <span class="meta"> · Makers Hub</span>
+                </li>
+                <li class="video-item" data-title="Soldadura electrónica | Tips" data-canal="Electro Tips">
+                    <a href="https://www.youtube.com/watch?v=WWWWWWWWW2" target="_blank"
+                        rel="noopener noreferrer">Soldadura electrónica: herramientas y tips</a>
+                    <span class="meta"> · Electro Tips</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="redes" class="categoria">
+            <h2><i class="fa-solid fa-network-wired"></i> Redes</h2>
+            <ul class="video-list" data-categoria="redes">
+                <li class="video-item" data-title="Fundamentos de redes | OSI y TCP/IP" data-canal="Net School">
+                    <a href="https://www.youtube.com/watch?v=VVVVVVVVV1" target="_blank"
+                        rel="noopener noreferrer">Fundamentos de redes: OSI y TCP/IP</a>
+                    <span class="meta"> · Net School</span>
+                </li>
+                <li class="video-item" data-title="Wi‑Fi | Configuración de routers" data-canal="Redes en Casa">
+                    <a href="https://www.youtube.com/watch?v=VVVVVVVVV2" target="_blank"
+                        rel="noopener noreferrer">Wi‑Fi: configuración de routers</a>
+                    <span class="meta"> · Redes en Casa</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="ia" class="categoria">
+            <h2><i class="fa-solid fa-robot"></i> Inteligencia Artificial</h2>
+            <ul class="video-list" data-categoria="ia">
+                <li class="video-item" data-title="Introducción al aprendizaje automático" data-canal="AI en Español">
+                    <a href="https://www.youtube.com/watch?v=UUUUUUUUU1" target="_blank"
+                        rel="noopener noreferrer">Introducción al aprendizaje automático</a>
+                    <span class="meta"> · AI en Español</span>
+                </li>
+                <li class="video-item" data-title="Redes neuronales | Conceptos clave" data-canal="DataX">
+                    <a href="https://www.youtube.com/watch?v=UUUUUUUUU2" target="_blank" rel="noopener noreferrer">Redes
+                        neuronales: conceptos clave</a>
+                    <span class="meta"> · DataX</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-top">
+            <div class="footer-info">
+                <h4>EduConnect</h4>
+                <p>Vía Ricardo J. Alfaro (Tumba Muerto), Edificio Green Hills Locales #1 al #4.<br />
+                    Lunes a viernes: 9:00 am - 6:00 pm<br />
+                    Sábados: 9:00 am - 4:00 pm
+                </p>
+            </div>
+
+            <div class="footer-info">
+                <h4><i class="fa-solid fa-headphones-simple"></i> Soporte técnico</h4>
+                <p>Apoyo con garantías, instalaciones y soporte técnico especializado.</p>
+            </div>
+
+
+            <div class="footer-middle">
+                <div class="footer-brand">
+                    <img src="" alt="Logo EduConnect" class="footer-logo" />
+                    <p><i class="fa-solid fa-phone"></i> +507 6000-0000</p>
+                    <p><i class="fa-solid fa-envelope"></i> webmaster@electroshop.com</p>
+                </div>
+                <div class="footer-links">
+                    <h4>INFORMACIÓN</h4>
+                    <ul>
+                        <li><a href="#">Acerca de nosotros</a></li>
+                        <li><a href="#">Contáctenos</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Métodos de Pago</a></li>
+                        <li><a href="#">Mi cuenta</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>CONTACTO</h4>
+                    <ul>
+                        <li><a href="#">Soporte Técnico</a></li>
+                        <li><a href="#">Técnico</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright © 2025 EduConnect Fundation</p>
+            </div>
+    </footer>
+
+</html>
